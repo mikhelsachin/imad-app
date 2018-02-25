@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/ui/style.css', function (req, res) {
+app.get('/ui/style.css', function (req, result) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 var pool=new Pool(config);
@@ -31,7 +31,7 @@ app.get('/student',function(req,res) {
            res.status(500).send(err.toString());
                }
         else{
-            res.send(JSON.stringify(res));
+            res.send(JSON.stringify(result));
         }
     
     });
